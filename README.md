@@ -1,60 +1,55 @@
-PRUEBA de GIT y GITHUB
+/**************** PRUEBA de GIT y GITHUB ************************/
+
+Git esta disponible para la mayoria de sistemas operativos (OSX, Windows, Linux)Para sistemas linux basados en Debian se instala desde la consola:
+$ sudo apt-get update && apt-get install git
 
 Una vez instalas GIT, debes configurarlo:
 
 git config --global user.name "Nombre"
 git config --global user.email "mail@mail.com"
 
-
 Generando tu Public Key:
 
-ssh-keygen
+$ ssh-keygen
 
 Leyendo tu llave para copiarla a Github:
 
-cat ~/.ssh/id_rsa.pub
+$ cat ~/.ssh/id_rsa.pub
 
 Arrancando tu proyecto:
 
-git init
+$ mkdir ~/nombre-del-directorio # Crea un directorio para usar con Git
+$ cd nombre-del-directorio/ # Cambiate al directorio nuevo
 
-touch README
+$ git init # Iniciando Git
 
-git add README
+$ touch README.md # Creando nuevo archivo README en formato "markdown"
 
-git commit -m "tu primer commit"
+$ git add README.md # Agregando archivo "README.md" al "index" o "escenario" (stage) 
 
-git push origin master
+$ git commit -m "Primer fucking commit" # Realizando la confirmación de los cambios agregados
 
-/*********************************GIT desde 0 - Por @klinsmannf*************************************/
+$ git push origin master # Enviando cambios desde la rama (branch) "master" (local) al "origin" (remoto)
 
-configuración
+Para clonar un repositorio desde una dirección remota:
 
-Descarga git para OSX
+$ git clone /path/to/repository
 
-Descarga git para Windows
+Por ejemplo:
 
-Descarga git para Linux
+$ git clone git@github.com:zeitnger/Prueba-que-onda.git
 
-crea un repositorio nuevo
+Flujo de trabajo
 
-crea un directorio nuevo, ábrelo y ejecuta git init para crear un repositorio de git nuevo.
-
-hacer checkout a un repositorio
-
-crea una copia local del repositorio ejecutando git clone /path/to/repository al utilizar un servidor remoto, el comando será git clone username@host:/path/to/repository
-
-flujo de trabajo
-
-tu repositorio local esta compuesto por tres "árboles" administrados por git. el primero es tu Directorio de trabajo el cual contiene los archivos. el segundo es el Index el cual actua como un área intermedia y finalmente el HEAD el cual apunta a el último commit realizado.
+Tu repositorio local esta compuesto por tres "árboles" administrados por git. el primero es tu Directorio de trabajo el cual contiene los archivos, el segundo es el "Index" ("escenario" o "stage")el cual actua como un área intermedia y finalmente el HEAD el cual apunta a el último commit realizado en esa rama (por ejemplo último commit en "master").
 
 add & commit
 
-Puedes proponer cambios (agregarlos a el Index) usando git add git add * Este es el primer paso en el flujo de trabajo básico. Para en realidad hacer commit a estos cambios usa git commit -m "Commit message" Ahora el archivo esta incluído en el HEAD, pero aún no en tu repositorio remoto.
+Puedes proponer cambios (agregarlos a el Index) usando $ git add <archivo>, o $ git add * (agrega todo). Este es el primer paso en el flujo de trabajo básico. Para en realidad hacer commit a estos cambios usa $ git commit -m "Commit message". Ahora el archivo esta incluído en el HEAD, pero aún no en tu repositorio remoto.
 
-envío de cambios
+Envío de cambios
 
-Tus cambios están ahora en el HEAD de tu copia local. Para enviar esos cambios a tu repositorio remoto ejecuta git push origin master Reemplaza master por la rama a la cual desees enviar tus cambios.
+Tus cambios están ahora en el HEAD de tu copia local. Para enviar esos cambios a tu repositorio remoto ejecuta $ git push origin master. Reemplaza master por la rama a la cual desees enviar tus cambios.
 
 Si no has clonado un repositorio existente y quieres conectar tu repositorio a un repositorio remoto, necesitas agregarlo con git remote add origin Ahora puede subir tus cambios al repositorio remoto selecionado ramas Las ramas son utilizadas para desarrollar funcionalidades aisladas unas de otras. La rama master es la rama por "defecto" cuando creas un repositorio. Usa otras ramas para el desarrollo y fusionalas de regreso a la rama principal al terminar.
 
